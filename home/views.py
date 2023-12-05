@@ -1,6 +1,6 @@
 from django.views import generic
 from .models import *
-from .forms import *
+from .forms import ComunidadeForm, PublicacaoForm
 
 # ------------------------------------------------
 
@@ -55,9 +55,3 @@ class UpdatePublicacao(generic.UpdateView):
     model = Publicacao
     form_class = PublicacaoForm
     template_name = "publicacao_form.html"
-
-# class ReservaUpdateView(generic.UpdateView):
-#   model = Reserva
-#   form_class = ReservaForm
-#   success_url = reverse_lazy("stands:reservas-list")
-#   template_name = "reservas_form.html"
