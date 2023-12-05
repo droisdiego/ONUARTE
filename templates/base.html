@@ -1,7 +1,6 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -10,51 +9,44 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
+</html>
+
 <body>
 
-    <header>
-        <a href=""><img id="logo" src="{% static 'media/nuarte.png' %}" alt=""></a>
-        <div id="pesquisa">
-            <input id="search" type="text">
-            <img id="icon_lupa" src="{% static 'media/lupa.png'%}" alt="">
-        </div>
-        <div>
-            <a href=""><img class="header_icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
-            <a href=""><img class="header_icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
-            <a href=""><img class="header_icons" src="{% static 'media/sair.png' %}" alt=""></a>
-        </div>
-    </header>
-    <hr>
-    <div class="linha-hori"></div>
-
-    <section class="section_nav1">
-        <nav id="nav1">
-            <button id="btn-grupos">+ GRUPOS</button>
-            <a href=""><img class="icons" src="{% static 'media/perfil.png' %}" alt="Seu Perfil"></a>
-            <a href=""> <img class="icons" src="{% static 'media/casa.png' %}" alt="Inicio"></a>
-            <a href=""><img class="icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
-            <a href=""> <img class="icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
-            <a href=""> <img class="icons" src="{% static 'media/sair.png' %}" alt=""></a>
-        </nav>
-    </section>
-
-    <div class="content">
-        {% block content %}
-        {% endblock %}
+    <!-- topo  -->
+    <div id="topo">
+        <h1>TOPO</h1>
     </div>
 
-    <!-- <section class="section_nav2">
-        <nav id="nav2">
-            
-            <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
-            <img class="icons" src="{% static 'media/casa.png' %}" alt="">
-            <img class="icons" src="{% static 'media/coracao.png' %}" alt="">
-            <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
-            <img class="icons" src="{% static 'media/sair.png' %}" alt="">
-        </nav>
-    </section> -->
+    <!-- Nav Esquerda -->
+    <div id="conteudoEsq">
+        <h3>COLUNA ESQUERDA</h3>
+        <p>Lorem .... </p>
+    </div>
 
+    <!-- Nav Direita -->
 
+    <div id="colEsq">
+        <div id="sepEsqcolCentral">
+            <div id="colDir">
+                <div id="conteudoDir">
+                    <h3>COLUNA DIREITA</h3>
+                    Lorem ipsum ...
+                </div>
+
+                <!-- Conteudo Centro -->
+                <div id="sepcolCentralDir">
+                    <div id="colCentral">
+                        
+                        {% block content %}
+                           
+                        {% endblock content %}
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
