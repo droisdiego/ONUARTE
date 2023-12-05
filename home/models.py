@@ -6,7 +6,7 @@ from django.db import models
 class PerfilUsuario(models.Model):
     nome = models.CharField(max_length=100)
     pseudonimo = models.CharField(max_length=50)
-    icone_perfil = models.URLField()
+    icone_perfil = models.ImageField(blank=True, null=True)
     descricao = models.TextField()
     email = models.EmailField()
 
