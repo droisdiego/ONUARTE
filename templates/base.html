@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <header>
+        <img id="logo" src="{% static 'media/logoo.png' %}" alt="">
+        <div id="pesquisa">
+            <input id="search" type="text">
+            <img id="icon_lupa" src="{% static 'media/lupa.png'%}" alt="">
+        </div>
+        <h2 id="pagina">Pagina Inicial</h2>
+    </header>
+    <div class="linha-hori"></div>
+
+    <section>
+        <nav id="nav1">
+            
+            <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
+            <img class="icons" src="{% static 'media/casa.png' %}" alt="">
+            <img class="icons" src="{% static 'media/coracao.png' %}" alt="">
+            <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
+            <img class="icons" src="{% static 'media/sair.png' %}" alt="">
+        </nav>
+
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <nav id="nav2">
+            <button id="btn-grupos">+ GRUPOS</button>
+            <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
+            <img class="icons" src="{% static 'media/casa.png' %}" alt="">
+            <img class="icons" src="{% static 'media/coracao.png' %}" alt="">
+            <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
+            <img class="icons" src="{% static 'media/sair.png' %}" alt="">
+        </nav>
+        
+    </section>
+
+</body>
+</html>
