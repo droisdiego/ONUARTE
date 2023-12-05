@@ -6,7 +6,7 @@ from django.conf import settings
 from home.views import HomeView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('',HomeView.as_view(),name='index')
 ]
 
