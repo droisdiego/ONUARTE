@@ -2,26 +2,49 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    
+
     <header>
-        <img id="logo" src="{% static 'media/logoo.png' %}" alt="">
+        <a href=""><img id="logo" src="{% static 'media/nuarte.png' %}" alt=""></a>
         <div id="pesquisa">
             <input id="search" type="text">
             <img id="icon_lupa" src="{% static 'media/lupa.png'%}" alt="">
         </div>
-        <h2 id="pagina">Pagina Inicial</h2>
+        <div>
+            <a href=""><img class="header_icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
+            <a href=""><img class="header_icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
+            <a href=""><img class="header_icons" src="{% static 'media/sair.png' %}" alt=""></a>
+        </div>
     </header>
+    <hr>
     <div class="linha-hori"></div>
 
-    <section>
+    <section class="section_nav1">
         <nav id="nav1">
+            <button id="btn-grupos">+ GRUPOS</button>
+            <a href=""><img class="icons" src="{% static 'media/perfil.png' %}" alt="Seu Perfil"></a>
+            <a href=""> <img class="icons" src="{% static 'media/casa.png' %}" alt="Inicio"></a>
+            <a href=""><img class="icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
+            <a href=""> <img class="icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
+            <a href=""> <img class="icons" src="{% static 'media/sair.png' %}" alt=""></a>
+        </nav>
+    </section>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- <section class="section_nav2">
+        <nav id="nav2">
             
             <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
             <img class="icons" src="{% static 'media/casa.png' %}" alt="">
@@ -29,22 +52,9 @@
             <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
             <img class="icons" src="{% static 'media/sair.png' %}" alt="">
         </nav>
+    </section> -->
 
-        <div>
-            {% block content %}
-            {% endblock %}
-        </div>
-
-        <nav id="nav2">
-            <button id="btn-grupos">+ GRUPOS</button>
-            <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
-            <img class="icons" src="{% static 'media/casa.png' %}" alt="">
-            <img class="icons" src="{% static 'media/coracao.png' %}" alt="">
-            <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
-            <img class="icons" src="{% static 'media/sair.png' %}" alt="">
-        </nav>
-        
-    </section>
 
 </body>
+
 </html>
