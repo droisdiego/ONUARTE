@@ -1,0 +1,5 @@
+# Arquivos e diretórios a serem ignorados em um projeto Python
+
+
+# Local development settings
+venv/

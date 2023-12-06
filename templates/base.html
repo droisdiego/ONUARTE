@@ -1,27 +1,122 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/padrao.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
+</html>
+
 <body>
-    
+
+    <!-- topo  -->
+    <header id="topo">
+        <a href=""><img class="logo" src="{% static 'media/nuarte.png' %}" alt=""> </a>
+        <p>ONUARTE</p>
+    </header>
+
+    <!-- Nav Left -->
+    <div id="conteudoEsq">
+        <h3>COLUNA ESQUERDA</h3>
+        <ul>
+            <li>
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg></div>
+                <div class="menu_fuction">{{ request.user.username }}</div>
+            </li>
+            <li>
+                uva
+            </li>
+        </ul>
+    </div>
+
+    <!-- Nav Right -->
+
+    <div id="colEsq">
+        <div id="sepEsqcolCentral">
+            <div id="colDir">
+                <div id="conteudoDir">
+                    <h3>COLUNA DIREITA</h3>
+                    <div>
+                    {% for comunidade in comunidades %}
+                        {{comunidade.nome_comunidade}}
+                    {% endfor %}aa
+                    </div>    
+                </div>
+
+                <!-- content -->
+                <div id="sepcolCentralDir">
+                    <div id="colCentral">
+
+                        {% block centro %}
+
+                        {% endblock centro %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- {% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
     <header>
-        <img id="logo" src="{% static 'media/logoo.png' %}" alt="">
+        <a href=""><img id="logo" src="{% static 'media/nuarte.png' %}" alt=""></a>
         <div id="pesquisa">
             <input id="search" type="text">
             <img id="icon_lupa" src="{% static 'media/lupa.png'%}" alt="">
         </div>
-        <h2 id="pagina">Pagina Inicial</h2>
+        <div>
+            <a href=""><img class="header_icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
+            <a href=""><img class="header_icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
+            <a href=""><img class="header_icons" src="{% static 'media/sair.png' %}" alt=""></a>
+        </div>
     </header>
+    <hr>
     <div class="linha-hori"></div>
 
-    <section>
+    <section class="section_nav1">
         <nav id="nav1">
+            <button id="btn-grupos">+ GRUPOS</button>
+            <a href=""><img class="icons" src="{% static 'media/perfil.png' %}" alt="Seu Perfil"></a>
+            <a href=""> <img class="icons" src="{% static 'media/casa.png' %}" alt="Inicio"></a>
+            <a href=""><img class="icons" src="{% static 'media/coracao.png' %}" alt="Salvos"></a>
+            <a href=""> <img class="icons" src="{% static 'media/adicionar.png' %}" alt=""></a>
+            <a href=""> <img class="icons" src="{% static 'media/sair.png' %}" alt=""></a>
+        </nav>
+    </section>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <<section class="section_nav2">
+        <nav id="nav2">
             
             <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
             <img class="icons" src="{% static 'media/casa.png' %}" alt="">
@@ -29,22 +124,9 @@
             <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
             <img class="icons" src="{% static 'media/sair.png' %}" alt="">
         </nav>
+    </section> 
 
-        <div>
-            {% block content %}
-            {% endblock %}
-        </div>
-
-        <nav id="nav2">
-            <button id="btn-grupos">+ GRUPOS</button>
-            <img class="icons" src="{% static 'media/perfil.png' %}" alt="">
-            <img class="icons" src="{% static 'media/casa.png' %}" alt="">
-            <img class="icons" src="{% static 'media/coracao.png' %}" alt="">
-            <img class="icons" src="{% static 'media/adicionar.png' %}" alt="">
-            <img class="icons" src="{% static 'media/sair.png' %}" alt="">
-        </nav>
-        
-    </section>
 
 </body>
-</html>
+
+</html> -->
