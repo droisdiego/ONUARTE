@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #be7a7a;
+    font: italic 14px/1.5em Verdana, Arial, Serif;
+}
+
+.logo {
+    border-radius: 41px;
+    border: 1px solid #000;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+#topo {
+    width: auto;
+    height: 50px;
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
+    border-bottom: 2px dotted #000000;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+#conteudoEsq {
+    position: fixed;
+    width: 100%;
+    max-width: 190px;
+    top: 60px;
+    left: 5px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+    border-bottom: 3px double #ffffff;
+    background-color: #ffffff;
+    opacity: 0.9;
+}
+
+#conteudoDir {
+    position: fixed;
+    width: 100%;
+    max-width: 140px;
+    top: 60px;
+    right: 5px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+    border-bottom: 3px double #ffffff;
+    background-color: #ffffff;
+    /* Adicionado fundo sólido */
+    opacity: 0.9;
+    /* Ajuste a opacidade conforme necessário */
+}
+
+#colEsq {
+    background: #ffffff;
+}
+
+#sepEsqcolCentral {
+    margin-left: 200px;
+    padding-left: 1px;
+    background: #000000;
+}
+
+#colDir {
+    background: #ffffff;
+    margin: 0px;
+}
+
+#sepcolCentralDir {
+    margin-right: 150px;
+    padding-right: 1px;
+    background: #050505;
+}
+
+#colCentral {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 2px 10px;
+    text-align: justify;
+    border-bottom: 1px solid #000000;
+}
+
+/* Adicionando media queries para tornar o layout responsivo */
+
+@media screen and (max-width: 768px) {
+
+    #conteudoEsq,
+    #conteudoDir {
+        position: fixed;
+        width: 100%;
+        max-width: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        /* Garante que as navegações fiquem sobrepostas ao conteúdo central */
+    }
+
+    #sepEsqcolCentral,
+    #sepcolCentralDir {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

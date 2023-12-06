@@ -5,8 +5,14 @@ from .forms import ComunidadeForm, PublicacaoForm
 # ------------------------------------------------
 
 # Index
-class HomeView(generic.TemplateView):
+class ListaPublicacoes(generic.ListView):
+    model = Publicacao
     template_name = "index.html"
+    context_object_name = "publicacoes"
+    def get_queryset(self):
+        return Publicacao.objects.order_by('-data_publicacao')
+# class HomeView(generic.TemplateView):
+#     template_name = "index.html"
 
 # ------------------------------------------------
 
@@ -22,12 +28,12 @@ class DetailUsuario(generic.DetailView):
 class CreateComunidade(generic.CreateView):
     model = Comunidade
     form_class = ComunidadeForm
-    success_url = HomeView()
+    success_url = ListaPublicacoes()
     template_name = "comunidade_form.html"
 
 class DeleteComunidade(generic.DeleteView):
     model = Comunidade
-    success_url = HomeView()
+    success_url = ListaPublicacoes()
 
 class DetailComunidade(generic.DetailView):
     model = Comunidade
@@ -40,12 +46,12 @@ class DetailComunidade(generic.DetailView):
 class CreatePublicacao(generic.CreateView):
     model = Publicacao
     form_class = PublicacaoForm
-    success_url = HomeView()
+    success_url = ListaPublicacoes()
     template_name = "publicacao_form.html"
 
 class DeletePublicacao(generic.DeleteView):
     model = Publicacao
-    success_url = HomeView()
+    success_url = ListaPublicacoes()
 
 class DetailPublicacao(generic.DetailView):
     model = Publicacao
