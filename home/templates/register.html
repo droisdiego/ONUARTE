@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    
+    <div class="wrapper">
+        <form action="{% url 'account_signup' %}" method="post">
+            {% csrf_token %}
+            <h1>Cadastro</h1>
+            <!-- Username -->
+            <div class="input-box">
+                <input type="text" placeholder="Usuário" name="{{ form.username.name }}" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <!-- Pseudonimo -->
+            <div class="input-box">
+                <input type="text" placeholder="Pseudonimo" name="{{ form.pseudonimo.name }}" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <!-- Icone -->
+            
+                <input type="file" name="{{ form.icone_perfil.name }}" accept="image/*">
+                
+            
+
+            <!-- Descrição -->
+            <div class="input-box">
+                <textarea name="{{ form.descricao.name }}" rows="4"  required></textarea>
+                
+            </div>
+
+            <!-- Senha 1 -->
+            <div class="input-box">
+                <input type="password" placeholder="Senha" name="{{ form.password1.name }}" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            
+            <!-- Senha 2 -->
+            <div class="input-box">
+                <input type="password" placeholder="Confirmar enha" name="{{ form.password2.name }}" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+
+            <button type="submit" class="btn">Cadastrar</button>
+            
+        </form>
+    </div>
+    
+</body>
+</html>

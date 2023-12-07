@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    
+    <div class="wrapper">
+        <form class="login" action="{% url 'account_login' %}" method="post">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Usuário" name="{{ form.login.name }}" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" placeholder="Senha" name="{{ form.password.name }}" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="{% url 'account_reset_password' %}">Esqueceu sua senha?</a>
+              </div>
+
+            <button type="submit" class="btn">Entrar</button>
+            <div class="register-link">
+                <p>Não possui uma conta? <a href="{% url 'register' %}">Cadastre-se</a></p>
+            </div>
+        </form>
+    </div>
+    <img id="logo" src="{% static 'media/logoNuartePretoFundo.png' %}" alt="">
+</body>
+</html>

@@ -1,8 +1,25 @@
 from django.views import generic
 from .models import *
 from .forms import ComunidadeForm, PublicacaoForm
+# from django.contrib.auth.decorators import login_required
 
 # ------------------------------------------------
+
+# Account-Allauth
+
+# class CustomSignupView(SignupView):
+#     template_name = 'register.html'
+#     form_class = CustomSignupForm
+
+# class CustomLoginView(LoginView):
+#     template_name = 'login.html'
+#     form_class = CustomLoginForm
+
+
+
+
+# ------------------------------------------------
+
 
 # Index
 class ListaPublicacoes(generic.ListView):
